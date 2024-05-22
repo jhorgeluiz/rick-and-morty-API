@@ -1,0 +1,131 @@
+@charset "UTF-8";
+
+/* ====================CAPA TELA PEQUENA==================== */
+
+@media screen and (min-width: 375px) and (max-width: 768px) {
+
+    @font-face {
+        font-family: 'rick';
+        src: url('get-schwifty.ttf') format('truetype');
+    }
+
+    body{
+        background-image: url('rick-and-morty-in-another-planet_3840x2160_xtrafondos.com.jpg');
+        background-repeat: no-repeat;  
+        background-position: center; 
+        background-size: cover; 
+    }
+
+    main {
+        box-shadow: 1px 1px 10px black;
+        height: 680px;
+    }
+
+    form {
+        position: relative;
+        top: 2em;
+        display: flex;
+        justify-content: center;
+    }
+    .input1 {
+        background-color: #b8b8b8;
+        border: 2px solid gray;
+        text-align: center;
+        position: relative;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        width: 130px;
+        height: 30px;
+        box-shadow: 1px 1px 5px black;
+    }
+    .input2 {
+        text-align: center;
+        border: 2px solid #b8b8b8;
+        width: 100px;
+        box-shadow: 1px 1px 5px black;
+    }
+    .input3 {
+        background-color: #0D6EFD;
+        color: white;
+        width: 30PX;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        border-style: none;
+        position: relative;
+        right: 2px;
+        box-shadow: 1px 1px 5px black;
+    }
+
+    .fundoimg img {
+        border-radius: 130px;
+        position: relative;
+        border: 2px solid black;
+        box-shadow: 1px 1px 3px black;
+        width: 150px;
+        height: 150px;
+    }
+
+    .containerbotao {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        top: 3em;
+    }
+    .botao {
+        position: relative;
+        top: 50px;
+        background-color: #0D6EFD;
+        color: white;
+        border-radius: 5px;
+        box-shadow: 1px 1px 8px black;
+        border-style: none;
+        margin: 5px;
+        width: 60px;
+        height: 40px;
+    }
+
+    .containerinfo {
+        background-color: #6ac26a;
+        margin: auto;
+        position: relative;
+        top: 60px;
+        font-size: 10px;
+        width: 300px;
+        box-shadow: 1px 1px 5px black;
+    }
+    .article, h1, h2 {
+        display: inline-block;
+        margin: 0px;
+        margin-left: 5px;
+    }
+
+    .episodio{
+        margin: auto;
+        display: block;
+        position: relative;
+        top: 8em;
+        background-color: #6ac26a;
+        width: 300px;
+        font-size: 10px;
+        box-shadow: 1px 1px 5px black;
+    }
+    .tituloepi {
+        font-size: 15px;
+        font-weight: bolder;
+    }
+
+    .rick1 {
+        font-family: 'rick';
+        font-size: 50px;
+        color: green;
+        position: relative;
+        left: 12.5px;
+        margin-top: 10px;
+    }
+}
+
+/* ====================CAPA TELA GRANDE==================== */
+
+@media screen and (min-width: 992px) {
+    
+}

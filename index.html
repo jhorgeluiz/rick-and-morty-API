@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rick and Morty</title>
+    <link rel="stylesheet" href="estilo/style.css">
+</head>
+<body> 
+    <main>
+        <h2 class="rick1">Rick and Morty</h2>
+        <form action="" method="get">
+            
+            <input class="input1" type="text" name="" id="" placeholder="ID do personagem" disabled>
+            <input class="input2" type="number" name="campo" id="campo">
+            <input class="input3" type="button" value="Ir" id="butao" onclick="verificar()">
+            
+        </form>
+        
+        
+        <div class="containerbotao">
+            <input class="botao" type="button" value="Anterior" id="prev">
+            <div class="fundoimg">
+                <img src=""  id="image">
+            </div>
+            <input class="botao" type="button" value="Proximo" id="next">
+        </div>
+        
+        <div class="containerinfo">
+            <article> <h1>Nome:</h1>       <h1 id="name"></h1>     </article> 
+            <article> <h2>Status:</h2>     <h1 id="status"></h1>   </article>
+            <article> <h2>Espécies:</h2>   <h2 id="species"></h2>  </article>
+            <article> <h2>Gênero:</h2>     <h2 id="gender"></h2>   </article>
+            <article> <h2>Origem:</h2>     <h2 id="origin"></h2>   </article>
+            <article> <h2>Localidade:</h2> <h2 id="location"></h2> </article>
+            <article> <h2>Criada:</h2>     <h2 id="created"></h2>  </article> 
+        </div>
+
+        <article class="episodio">
+            <h1 class="tituloepi">Episodios:</h1> <br>
+            <h2 id="episode"></h2>
+        </article>
+    </main>
+
+
+    <script>
+        const campo = document.getElementById('campo')
+        const butaoIr = document.getElementById('butao')
+        // const container = document.getElementById('container')
+        const image = document.getElementById('image')
+        const nome = document.getElementById('name')
+        const status = document.getElementById('status')
+        const species = document.getElementById('species')
+        const gender = document.getElementById('gender')
+        const origin = document.getElementById('origin')
+        const loc = document.getElementById('location')
+        const created = document.getElementById('created')
+        const episode = document.getElementById ('episode')
+
+        let Anterior = document.getElementById('prev')
+        let proximo = document.getElementById('next')
+        let pagina = 0
+         
+        const fetchApi = (value) => {
+            const result = fetch(`https://rickandmortyapi.com/api/character/${value}`)
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data.name)
+                return data
+            })
+            return result
+        }
+ 
+        const informacao = async (id) => {
+            const result = await fetchApi(id)
+            // container.innerHTML = `${JSON.stringify(result,undefined,2)}`
+            image.src = `${result.image}`
+            nome.innerHTML = `${result.name}`
+            status.innerHTML = `${result.status}`
+            species.innerHTML = `${result.species}`
+            gender.innerHTML = `${result.gender}`
+            origin.innerHTML = `${result.origin.name}`
+            loc.innerHTML = `${result.location.name}`
+            created.innerHTML = `${result.created}`
+            
+            
+            const numeros_episodios = result.episode.map(episodeUrl => {
+                const numeroepisodio = episodeUrl.split('/').pop()
+                return `Episódio ${numeroepisodio}`
+            })
+            episode.innerHTML = numeros_episodios.join(', ')
+            
+        }
+
+        butaoIr.addEventListener('click', async (event)  => {
+            // event.preventDefault()
+            // const result = await fetchApi(campo.value)
+            const idper = document.getElementById('campo').value
+            if (idper) {
+                await informacao(idper)
+            }
+
+        })
+        
+        Anterior.addEventListener('click', async () => {
+            
+            if (pagina > 1) {
+                pagina -= 1
+                await informacao(pagina)
+            }
+        })
+
+        proximo.addEventListener('click', async () => {
+            pagina += 1
+            await informacao(pagina)
+        })
+        informacao(pagina)
+
+
+        function verificar() {
+            let campo = document.getElementById('campo').value
+            
+            if (campo > 826) {
+                alert('[ ERRO ]...Este personagem nao existe!')
+            }
+            
+            if (campo == '') {
+                campo.innerHTML = ''
+                image.src = ''
+                nome.innerHTML = ''
+                status.innerHTML = ''
+                species.innerHTML = ''
+                gender.innerHTML = ''
+                origin.innerHTML = ''
+                loc.innerHTML = ''
+                created.innerHTML = ''
+                episode.innerHTML = ''
+            }
+        }
+
+    </script>
+</body>
+</html>
