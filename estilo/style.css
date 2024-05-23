@@ -51,9 +51,10 @@
         box-shadow: 1px 1px 5px black;
     }
     .input3 {
+        
         background-color: green;
         color: white;
-        width: 30PX;
+        width: 40PX;
         border-top-right-radius: 5px;
         border-bottom-right-radius: 5px;
         border: 1px solid gray;
@@ -67,7 +68,7 @@
         background-color: #0f660f;
         transition-duration: .0100s;
     }
-
+   
     .fundoimg img {
         border-radius: 130px;
         position: relative;
@@ -202,17 +203,18 @@
     .input3 {
         background-color: green;
         color: white;
-        width: 30PX;
+        width: 60PX;
         border-top-right-radius: 5px;
         border-bottom-right-radius: 5px;
         border-style: none;
         position: relative;
         right: 1px;
         box-shadow: 1px 1px 5px black;
+        border: 1px solid gray;
     }
     .input3:active {
-        border: 2px solid gray;
-        background-color: #1e8a1e;
+        border: 3px solid green;
+        background-color: #0f660f;
         transition-duration: .050s;
     }
     
@@ -240,7 +242,7 @@
         box-shadow: 1px 1px 3px black;
         border: 1px solid gray;
         margin: 5px;
-        width: 100px;
+        width: 60px;
         height: 40px;
     }
     .botao:active {
