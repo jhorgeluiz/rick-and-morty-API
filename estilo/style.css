@@ -44,26 +44,32 @@
         text-align: center;
         font-weight: bolder;
         font-size: 20px;
-        border: 2px solid #b8b8b8;
+        border: 2px solid gray;
         width: 100px;
         box-shadow: 1px 1px 5px black;
     }
     .input3 {
-        background-color: #0D6EFD;
+        background-color: green;
         color: white;
         width: 30PX;
         border-top-right-radius: 5px;
         border-bottom-right-radius: 5px;
-        border-style: none;
+        border: 1px solid gray;
+        /* border-style: none; */
         position: relative;
         right: 1px;
-        box-shadow: 1px 1px 5px black;
+        box-shadow: 1px 1px 3px black;
+    }
+    .input3:active {
+        border: 3px solid green;
+        background-color: #0f660f;
+        transition-duration: .0100s;
     }
 
     .fundoimg img {
         border-radius: 130px;
         position: relative;
-        border: 2px solid black;
+        border: 1px solid gray;
         box-shadow: 1px 1px 3px black;
         width: 150px;
         height: 150px;
@@ -78,14 +84,19 @@
     .botao {
         position: relative;
         top: 50px;
-        background-color: #0D6EFD;
+        background-color: green;
         color: white;
         border-radius: 5px;
-        box-shadow: 1px 1px 8px black;
-        border-style: none;
+        box-shadow: 1px 1px 3px black;
+        border: 1px solid gray;
         margin: 5px;
         width: 60px;
         height: 40px;
+    }
+    .botao:active {
+        border: 3px solid green;
+        background-color: #0f660f;
+        transition-duration: .0100s;
     }
 
     .containerinfo {
@@ -95,7 +106,8 @@
         top: 60px;
         font-size: 10px;
         width: 300px;
-        box-shadow: 1px 1px 5px black;
+        box-shadow: 1px 1px 3px black;
+        border: 1px solid gray;
     }
     .article, h1, h2 {
         display: inline-block;
@@ -111,7 +123,8 @@
         background-color: #6ac26a;
         width: 300px;
         font-size: 10px;
-        box-shadow: 1px 1px 5px black;
+        box-shadow: 1px 1px 3px black;
+        border: 1px solid gray;
     }
     .tituloepi {
         font-size: 15px;
@@ -123,7 +136,7 @@
         font-size: 50px;
         color: green;
         position: relative;
-        left: 15px;
+        left: 20px;
         margin-top: 15px;
     }
     .subtitulo {
@@ -135,7 +148,7 @@
     }
 }
 
-/* ====================CAPA TELA GRANDE==================== */
+/* ====================TELA GRANDE==================== */
 
 @media screen and (min-width: 992px) {
     @font-face {
@@ -185,7 +198,7 @@
         box-shadow: 1px 1px 5px black;
     }
     .input3 {
-        background-color: #0D6EFD;
+        background-color: green;
         color: white;
         width: 30PX;
         border-top-right-radius: 5px;
@@ -195,11 +208,16 @@
         right: 1px;
         box-shadow: 1px 1px 5px black;
     }
+    .input3:active {
+        border: 2px solid gray;
+        background-color: #1e8a1e;
+        transition-duration: .050s;
+    }
     
     .fundoimg img {
         border-radius: 130px;
         position: relative;
-        border: 2px solid black;
+        border: 1px solid gray;
         box-shadow: 1px 1px 3px black;
         width: 250px;
         height: 250px;
@@ -214,14 +232,19 @@
     .botao {
         position: relative;
         top: 80px;
-        background-color: #0D6EFD;
+        background-color: green;
         color: white;
         border-radius: 5px;
-        box-shadow: 1px 1px 8px black;
-        border-style: none;
+        box-shadow: 1px 1px 3px black;
+        border: 1px solid gray;
         margin: 5px;
         width: 100px;
         height: 40px;
+    }
+    .botao:active {
+        border: 3px solid green;
+        background-color: #0f660f;
+        transition-duration: .0100s;
     }
     
     .containerinfo {
@@ -232,6 +255,7 @@
         font-size: 14px;
         width: 400px;
         box-shadow: 1px 1px 5px black;
+        border: 1px solid gray;
     }
     .article, h1, h2 {
         display: inline-block;
@@ -248,6 +272,7 @@
         width: 500px;
         font-size: 10px;
         box-shadow: 1px 1px 5px black;
+        border: 1px solid gray;
     }
     .tituloepi {
         font-size: 20px;
@@ -264,7 +289,7 @@
 
     .subtitulo {
         position: relative;
-        top: 2.5em;
+        top: 2.3em;
         left: 2.9em;
         color: green;
         font-size: 20px;
