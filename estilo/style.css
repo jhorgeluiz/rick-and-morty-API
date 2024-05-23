@@ -15,13 +15,14 @@
         background-position: center; 
         background-size: cover; 
     }
-
+     
     main {
+        background-color: aliceblue;
         margin: auto;
         box-shadow: 1px 1px 10px black;
         width: 350px;
         height: 650px;
-    }
+    } 
 
     form {
         position: relative;
