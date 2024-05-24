@@ -47,7 +47,6 @@
     <script>
         const campo = document.getElementById('campo')
         const butaoIr = document.getElementById('butao')
-        // const container = document.getElementById('container')
         const image = document.getElementById('image')
         const nome = document.getElementById('name')
         const status = document.getElementById('status')
@@ -60,7 +59,7 @@
 
         let Anterior = document.getElementById('prev')
         let proximo = document.getElementById('next')
-        let pagina = 0
+        let pagina = 1
          
         const fetchApi = (value) => {
             const result = fetch(`https://rickandmortyapi.com/api/character/${value}`)
@@ -84,23 +83,18 @@
             loc.innerHTML = `${result.location.name}`
             created.innerHTML = `${result.created}`
             
-            
             const numeros_episodios = result.episode.map(episodeUrl => {
                 const numeroepisodio = episodeUrl.split('/').pop()
-                return `Episódio ${numeroepisodio}`
+                return `${numeroepisodio}`
             })
             episode.innerHTML = numeros_episodios.join(', ')
-            
         }
 
         butaoIr.addEventListener('click', async (event)  => {
-            // event.preventDefault()
-            // const result = await fetchApi(campo.value)
             const idper = document.getElementById('campo').value
             if (idper) {
                 await informacao(idper)
             }
-
         })
         
         Anterior.addEventListener('click', async () => {
@@ -117,25 +111,11 @@
         })
         informacao(pagina)
 
-
         function verificar() {
             let campo = document.getElementById('campo').value
             
             if (campo > 826) {
                 alert('[ ERRO ]...Este personagem nao existe!')
-            }
-            
-            if (campo == '') {
-                campo.innerHTML = ''
-                image.src = ''
-                nome.innerHTML = ''
-                status.innerHTML = ''
-                species.innerHTML = ''
-                gender.innerHTML = ''
-                origin.innerHTML = ''
-                loc.innerHTML = ''
-                created.innerHTML = ''
-                episode.innerHTML = ''
             }
         }
 
